@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv=Content-Type content="text/html;charset=UTF-8">
+    <title>INVIDIA CLOTHES</title>
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"><h1>{{category.name}}</h1></div>
+        <div class="body">
+            <div class="left"></div>
+            <div class="main">
+                {% for product in products %}
+                <a class="item" href="/item/{{product.alias}}/">
+                    <img src="{{product.image}}" alt="">
+                    <span class="title">{{product.name}}</span>
+                    <span class="price">{{product.price}}Р</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

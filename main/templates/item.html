@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv=Content-Type content="text/html;charset=UTF-8">
+    <title>INVIDIA CLOTHES</title>
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="{% static "jquery.cookie.js" %}"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"><h1>{{product.name}}</h1></div>
+        <div class="body">
+            <div class="item">
+                <img class="full" src="{{product.image}}" alt="">
+                <span class="price"><span class="value">{{product.price}}</span>Р</span>
+                <a href="#" class="buy">Купить</a>
+            </div>
+        </div>
+    </div>
+    <div class="cart">В корзине товаров на <span class="sum">0</span>
+    <a class="form" href="/order/">Оформить заказ</a></div>
+<script type ="text/javascript">
+    $(function(){
+        var arr1 = $.cookie('cart');
+        if(!arr1){
+            arr1 = '[]';
+        }
+        var json1 = $.parseJSON(arr1);
+        sum1 = 0;
+        $.each(json1, function(index, value) {
+            sum1 = sum1 + parseInt(value['price']);
+        });
+        $('.cart .sum').text(sum1);
+
+
+        $(".buy").click(function(){
+            var arr = $.cookie('cart');
+            if(!arr){
+                arr = '[]';
+            }
+            var json = $.parseJSON(arr);
+            json.push({
+                'name':$('h1').text(),
+                'price':$('span.value').text(),
+                'img':$('img.full').attr('src'),
+            });
+            $.cookie('cart', JSON.stringify(json), {path : '/'});
+            sum = 0;
+            $.each(json, function(index, value) {
+                sum = sum + parseInt(value['price']);
+            });
+            $('.cart .sum').text(sum);
+        });
+    });
+</script>
+</body>
+</html>

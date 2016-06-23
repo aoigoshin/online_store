@@ -1,0 +1,145 @@
+    .wrapper{
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .wrapper .header{
+        width: 100%;
+        height: 40px;
+        background: #eee;
+    }
+    .wrapper .body{
+        width: 100%;
+        min-height: 600px;
+        background: #ccc;
+        font-size: 0;
+    }
+    .wrapper .body .left{
+        width:300px;
+        min-height: 600px;
+        background: green;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .wrapper .body .main{
+        width:660px;
+        margin-left: 40px;
+        min-height: 600px;
+        background: red;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 0;
+    }
+    .wrapper .body .main .item{
+        display: inline-block;
+        vertical-align: top;
+        margin:10px;
+        background: red;
+        width: 80px;
+        min-height: 100px;
+        text-decoration: none;
+    }
+    .wrapper .body .main .item img{
+        display: block;
+        width: 80px;
+        height: auto;
+    }
+    .wrapper .body .main .item span{
+        
+        color:#fff;
+    }
+    .wrapper .body .main .item .title{
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+    .wrapper .body .main .item .price{
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .wrapper .body .main .item .price .value{
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .wrapper .body .item .price{
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .wrapper .body .main .price .value{
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .wrapper .body .item{
+        width: 600px;
+        min-height: 300px;
+        margin: 0 auto;
+        background: #eee;
+    }
+
+    }
+    .wrapper .body .item .buy{
+        margin-top: 5px;
+        display: block;
+        font-size: 14px;
+        color:#000;
+    }
+    .wrapper .body .item .full{
+        max-width: 600px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .wrapper .body ul{
+        font-size: 14px;
+        margin: 0;
+    }
+    a {
+        font-size: 16px;   
+    }
+
+    .cart {
+        margin-top: 0;
+        background: #e3e5e4;
+        font-size: 14px;
+        border: 1px solid #000;
+        position: fixed;
+        top:0%;
+        right: 0;
+    }
+
+    .cart .form, .cart .sum {
+        display: block;
+    }
+
+    .cart .sum {
+        margin: 0 auto;
+        width: 20px;
+    }
+
+    .cart .sum:after {
+        content: 'руб';
+        margin-left: 5px;
+    }
+
+    .basket .row {
+        display: block;
+        width:100%;
+    }
+
+    .basket .row img, .basket .row .name, .basket .row .price, .basket .row .delete {
+        display: inline-block;
+        vertical-align: top;
+        width: 100px;
+    }
+
+    .basket .row .delete {
+        width: 10px;
+    }
